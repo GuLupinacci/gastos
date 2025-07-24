@@ -31,7 +31,7 @@ if uploaded_file:
             return "Mercado Livre"
         elif any(palavra in titulo_lower for palavra in ["gonsali", "manual"]):
             return "Cabelo"
-        elif "natatorium" in titulo_lower:
+        elif any(palavra in titulo_lower for palavra in ["natatorium", "academia", "fitness","moove", "pratique"]):
             return "Academia"
         else:
             return titulo.title()
