@@ -48,11 +48,7 @@ if uploaded_file:
     tabela_final.index = tabela_final.index + 1
     tabela_final.rename(columns={'categoria': 'Categoria', 'amount': 'Total'}, inplace=True)
 
-    st.write("### Resumo por categoria")
-    st.dataframe(tabela_final)
-
     total = df['amount'].sum()
-    st.write(f"**Total geral: R$ {total:.2f}**")
 
     # Gerar PDF
     pdf = FPDF()
@@ -61,7 +57,7 @@ if uploaded_file:
     pdf.cell(0, 10, "Resumo de Gastos por Categoria", 0, 1, "C")  # título centralizado
 
     pdf.set_font("Arial", "B", 12)
-    pdf.set_fill_color(200, 220, 255)  # cor de fundo azul claro para o cabeçalho
+    pdf.set_fill_color(230, 230, 230)  # cinza claro
 
     # Cabeçalho da tabela
     pdf.cell(10, 10, "No", 1, 0, "C", fill=True)
